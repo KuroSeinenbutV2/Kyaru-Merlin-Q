@@ -45,8 +45,8 @@ struct blk_queue_stats;
 struct blk_stat_callback;
 
 #define BLKDEV_MIN_RQ	4
-#ifdef CONFIG_ZEN_INTERACTIVE
-#define BLKDEV_MAX_RQ	512
+#ifdef CONFIG_EX_DNL
+#define BLKDEV_MAX_RQ	16
 #else
 #define BLKDEV_MAX_RQ	128	/* Default maximum */
 #endif
