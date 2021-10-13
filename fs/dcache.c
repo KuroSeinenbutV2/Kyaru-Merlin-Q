@@ -81,7 +81,11 @@
  *   dentry1->d_lock
  *     dentry2->d_lock
  */
+#ifdef CONFIG_EX_DNL
+int sysctl_vfs_cache_pressure __read_mostly = 20;
+#else
 int sysctl_vfs_cache_pressure __read_mostly = 100;
+#endif
 EXPORT_SYMBOL_GPL(sysctl_vfs_cache_pressure);
 
 __cacheline_aligned_in_smp DEFINE_SEQLOCK(rename_lock);
