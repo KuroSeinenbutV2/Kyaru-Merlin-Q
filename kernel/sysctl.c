@@ -1372,7 +1372,11 @@ static struct ctl_table vm_table[] = {
 		.procname	= "overcommit_ratio",
 		.data		= &sysctl_overcommit_ratio,
 		.maxlen		= sizeof(sysctl_overcommit_ratio),
+#ifdef CONFIG_EX_DNL
+		.mode		= 0444,
+#else
 		.mode		= 0644,
+#endif
 		.proc_handler	= overcommit_ratio_handler,
 	},
 	{
@@ -1394,7 +1398,11 @@ static struct ctl_table vm_table[] = {
 		.procname	= "dirty_background_ratio",
 		.data		= &dirty_background_ratio,
 		.maxlen		= sizeof(dirty_background_ratio),
+#ifdef CONFIG_EX_DNL
+		.mode		= 0444,
+#else
 		.mode		= 0644,
+#endif
 		.proc_handler	= dirty_background_ratio_handler,
 		.extra1		= &zero,
 		.extra2		= &one_hundred,
@@ -1411,7 +1419,11 @@ static struct ctl_table vm_table[] = {
 		.procname	= "dirty_ratio",
 		.data		= &vm_dirty_ratio,
 		.maxlen		= sizeof(vm_dirty_ratio),
+#ifdef CONFIG_EX_DNL
+		.mode		= 0444,
+#else
 		.mode		= 0644,
+#endif
 		.proc_handler	= dirty_ratio_handler,
 		.extra1		= &zero,
 		.extra2		= &one_hundred,
@@ -1428,14 +1440,22 @@ static struct ctl_table vm_table[] = {
 		.procname	= "dirty_writeback_centisecs",
 		.data		= &dirty_writeback_interval,
 		.maxlen		= sizeof(dirty_writeback_interval),
+#ifdef CONFIG_EX_DNL
+		.mode		= 0444,
+#else
 		.mode		= 0644,
+#endif
 		.proc_handler	= dirty_writeback_centisecs_handler,
 	},
 	{
 		.procname	= "dirty_expire_centisecs",
 		.data		= &dirty_expire_interval,
 		.maxlen		= sizeof(dirty_expire_interval),
+#ifdef CONFIG_EX_DNL
+		.mode		= 0444,
+#else
 		.mode		= 0644,
+#endif
 		.proc_handler	= proc_dointvec_minmax,
 		.extra1		= &zero,
 	},

@@ -146,7 +146,11 @@ SCHED_FEAT(SCHED_MTK_EAS, true)
  * If disabled, this behaviour will only apply to tasks of the
  * RT class.
  */
+#ifdef CONFIG_EX_DNL
+SCHED_FEAT(SCHEDTUNE_BOOST_HOLD_ALL, true)
+#else
 SCHED_FEAT(SCHEDTUNE_BOOST_HOLD_ALL, false)
+#endif
 
 /*
  * Utilization clamping lazy update.

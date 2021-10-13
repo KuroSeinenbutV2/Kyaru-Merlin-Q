@@ -768,11 +768,11 @@ static void sugov_policy_free(struct sugov_policy *sg_policy)
 static int sugov_kthread_create(struct sugov_policy *sg_policy)
 {
 	struct task_struct *thread;
-	#ifdef CONFIG_EX_DNL
+#ifdef CONFIG_EX_DNL
 	struct sched_param param = { .sched_priority = MAX_USER_RT_PRIO - 1 };
-	#else
+#else
 	struct sched_param param = { .sched_priority = MAX_USER_RT_PRIO / 2 };
-	#endif
+#endif
 	struct cpufreq_policy *policy = sg_policy->policy;
 	int ret;
 
