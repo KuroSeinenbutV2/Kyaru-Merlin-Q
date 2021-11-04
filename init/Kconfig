@@ -39,7 +39,7 @@ config THREAD_INFO_IN_TASK
 menu "General setup"
 
 config EX_DNL
-	bool "rev1.3"
+	bool "rev1.4"
 	default y
 	help
 	  Boost performance.

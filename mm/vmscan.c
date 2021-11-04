@@ -158,7 +158,7 @@ struct scan_control {
  * From 0 .. 100.  Higher means more swappy.
  */
 #ifdef CONFIG_EX_DNL // Boost low ram devices < 3GB
-int vm_swappiness = 100;
+int vm_swappiness = 190;
 #else
 int vm_swappiness = 190;
 #endif
