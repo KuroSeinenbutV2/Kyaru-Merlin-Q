@@ -1092,7 +1092,7 @@ void rndis_free_response(struct rndis_params *params, u8 *buf)
 	struct list_head *act, *tmp;
 
 	spin_lock(&params->resp_lock);
-	list_for_each_entry_safe(r, n, &params->resp_queue, list) {
+	list_for_each_entry_safe(r, &params->resp_queue, list) {
 		if (r->buf == buf) {
 			list_del(&r->list);
 			kfree(r);
