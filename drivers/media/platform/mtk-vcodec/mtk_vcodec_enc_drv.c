@@ -145,7 +145,7 @@ static int fops_vcodec_release(struct file *file)
 	mtk_v4l2_debug(0, "[%d] encoder", ctx->id);
 	mutex_lock(&dev->dev_mutex);
 
-	v4l2_m2m_ctx_release(ctx->m2m_ctx);e
+	v4l2_m2m_ctx_release(ctx->m2m_ctx);
 	mtk_vcodec_enc_release(ctx);
 	v4l2_fh_del(&ctx->fh);
 	v4l2_fh_exit(&ctx->fh);
